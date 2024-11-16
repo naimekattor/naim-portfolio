@@ -17,7 +17,19 @@ const About = () => {
           <div>
             <img src={about_1} alt="" className='w-[90px] h-[90px]' />
             <span className='text-[30px] text-white my-[30px] font-semibold'>My Ambition</span>
-            <p className='text-[#A2A2A2] text-[16px] mt-[15px] text-wrap'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, sapiente ratione iusto unde expedita, porro recusandae ad adipisci rerum nam inventore, voluptatibus pariatur eum veritatis quasi deleniti hic maiores commodi!</p>
+            <p className='text-[#A2A2A2] text-[16px] mt-[15px] text-wrap'>Mastering Frontend Skills: Go beyond React and solidify your knowledge in core web technologies like HTML, CSS, and JavaScript (ES6+). Aim to understand how the web works under the hood.
+
+React Ecosystem: Dive deeper into React's ecosystem — Redux or other state management libraries, React Router, React Query, and testing frameworks like Jest or React Testing Library.
+
+Backend Knowledge: Learn the basics of backend development (Node.js, Express, databases) to become a more versatile full-stack developer.
+
+Performance Optimization: Develop skills in optimizing React apps for performance, focusing on things like lazy loading, reducing bundle size, and effective state management.
+
+Build Real Projects: Take on challenging projects that solve real-world problems or contribute to open-source projects to build a strong portfolio.
+
+Stay Updated: Follow industry trends and new React features (like Server Components) to remain competitive.
+
+Career Goals: Think about specializing (e.g., UI/UX design) or aiming for leadership roles, such as becoming a tech lead or a solution architect in the long run.</p>
           </div>
           <div>
             <img src={about_2} alt="" className='w-[90px] h-[90px]' />
