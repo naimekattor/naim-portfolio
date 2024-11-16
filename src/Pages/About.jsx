@@ -17,19 +17,19 @@ const About = () => {
           <div>
             <img src={about_1} alt="" className='w-[90px] h-[90px]' />
             <span className='text-[30px] text-white my-[30px] font-semibold'>My Ambition</span>
-            <p className='text-[#A2A2A2] text-[16px] mt-[15px] text-wrap'>Mastering Frontend Skills: Go beyond React and solidify your knowledge in core web technologies like HTML, CSS, and JavaScript (ES6+). Aim to understand how the web works under the hood.
+            <p className='text-[#A2A2A2] text-[16px] mt-[15px] text-wrap'>01. Mastering Frontend Skills: Go beyond React and solidify your knowledge in core web technologies like HTML, CSS, and JavaScript (ES6+). Aim to understand how the web works under the hood.<br/>
 
-React Ecosystem: Dive deeper into React's ecosystem — Redux or other state management libraries, React Router, React Query, and testing frameworks like Jest or React Testing Library.
+02. React Ecosystem: Dive deeper into React's ecosystem — Redux or other state management libraries, React Router, React Query, and testing frameworks like Jest or React Testing Library.<br/>
 
-Backend Knowledge: Learn the basics of backend development (Node.js, Express, databases) to become a more versatile full-stack developer.
+03. Backend Knowledge: Learn the basics of backend development (Node.js, Express, databases) to become a more versatile full-stack developer.<br/>
 
-Performance Optimization: Develop skills in optimizing React apps for performance, focusing on things like lazy loading, reducing bundle size, and effective state management.
+04. Performance Optimization: Develop skills in optimizing React apps for performance, focusing on things like lazy loading, reducing bundle size, and effective state management.<br/>
 
-Build Real Projects: Take on challenging projects that solve real-world problems or contribute to open-source projects to build a strong portfolio.
+05. Build Real Projects: Take on challenging projects that solve real-world problems or contribute to open-source projects to build a strong portfolio.<br/>
 
-Stay Updated: Follow industry trends and new React features (like Server Components) to remain competitive.
+06. Stay Updated: Follow industry trends and new React features (like Server Components) to remain competitive.<br/>
 
-Career Goals: Think about specializing (e.g., UI/UX design) or aiming for leadership roles, such as becoming a tech lead or a solution architect in the long run.</p>
+07 .Career Goals: Think about specializing (e.g., UI/UX design) or aiming for leadership roles, such as becoming a tech lead or a solution architect in the long run.</p>
           </div>
           <div>
             <img src={about_2} alt="" className='w-[90px] h-[90px]' />
