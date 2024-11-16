@@ -35,7 +35,19 @@ const About = () => {
             <img src={about_2} alt="" className='w-[90px] h-[90px]' />
             <span className='text-[30px] text-white my-[30px] font-semibold'>My Purpose</span>
 
-            <p className='text-[#A2A2A2] text-[16px] my-[15px]'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, sapiente ratione iusto unde expedita, porro recusandae ad adipisci rerum nam inventore, voluptatibus pariatur eum veritatis quasi deleniti hic maiores commodi!</p>
+            <p className='text-[#A2A2A2] text-[16px] my-[15px]'> <span className="text-[18px] font-semibold">01. Crafting User Experiences:</span> Your work directly impacts how users interact with web applications. The purpose is to create intuitive, dynamic, and responsive UIs that make users' digital interactions enjoyable and meaningful.<br/>
+
+<span className="text-[18px] font-semibold">02. Efficient Development:</span> React is known for its component-based architecture, which encourages reusability and maintainability. As a React developer, your goal is to build scalable components that can be reused, reducing redundancy and speeding up the development process.<br/>
+
+<span className="text-[18px] font-semibold">03. Optimizing Performance:</span> Ensuring fast loading times, smooth interactions, and optimized rendering are crucial. React developers often work to minimize bottlenecks and use tools like React Profiler to boost performance.<br/>
+
+<span className="text-[18px] font-semibold">04. Bridging UI and Logic:</span> React enables developers to tightly integrate the UI with application logic through hooks, state management, and props. Your purpose is to connect user interactions seamlessly with underlying data and logic, creating a fluid experience.<br/>
+
+<span className="text-[18px] font-semibold">05. Keeping Up with Trends:</span> React is a constantly evolving library with frequent updates and new features. Staying current ensures that your projects are secure, efficient, and leverage modern best practices.<br/>
+
+<span className="text-[18px] font-semibold">06. Collaborating in Teams:</span> As part of a development team, your purpose extends to working alongside designers, backend developers, and other stakeholders to deliver cohesive, user-centric products.<br/>
+
+<span className="text-[18px] font-semibold">07. Empowering Innovation:</span> By leveraging React’s flexibility, your purpose is to push the boundaries of what web applications can do, whether it’s by adopting new libraries, improving accessibility, or integrating powerful features like animations or real-time updates.</p>
           </div>
         </div>
         <div className=' relative'>
