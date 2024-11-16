@@ -17,7 +17,7 @@ const About = () => {
           <div>
             <img src={about_1} alt="" className='w-[90px] h-[90px]' />
             <span className='text-[30px] text-white my-[30px] font-semibold'>My Ambition</span>
-            <p className='text-[#A2A2A2] text-[16px] mt-[15px] text-wrap'>01. Mastering Frontend Skills: Go beyond React and solidify your knowledge in core web technologies like HTML, CSS, and JavaScript (ES6+). Aim to understand how the web works under the hood.<br/>
+            <p className='text-[#A2A2A2] text-[16px] mt-[15px] text-wrap leading-8'>01. Mastering Frontend Skills: Go beyond React and solidify your knowledge in core web technologies like HTML, CSS, and JavaScript (ES6+). Aim to understand how the web works under the hood.<br/>
 
 02. React Ecosystem: Dive deeper into React's ecosystem — Redux or other state management libraries, React Router, React Query, and testing frameworks like Jest or React Testing Library.<br/>
 
@@ -35,7 +35,7 @@ const About = () => {
             <img src={about_2} alt="" className='w-[90px] h-[90px]' />
             <span className='text-[30px] text-white my-[30px] font-semibold'>My Purpose</span>
 
-            <p className='text-[#A2A2A2] text-[16px] my-[15px] leading-4'> <span className="text-[18px] font-semibold">01. Crafting User Experiences:</span> Your work directly impacts how users interact with web applications. The purpose is to create intuitive, dynamic, and responsive UIs that make users' digital interactions enjoyable and meaningful.<br/>
+            <p className='text-[#A2A2A2] text-[16px] my-[15px] leading-8'> <span className="text-[18px] font-semibold">01. Crafting User Experiences:</span> Your work directly impacts how users interact with web applications. The purpose is to create intuitive, dynamic, and responsive UIs that make users' digital interactions enjoyable and meaningful.<br/>
 
 <span className="text-[18px] font-semibold">02. Efficient Development:</span> React is known for its component-based architecture, which encourages reusability and maintainability. As a React developer, your goal is to build scalable components that can be reused, reducing redundancy and speeding up the development process.<br/>
 
