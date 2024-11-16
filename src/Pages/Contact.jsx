@@ -5,7 +5,7 @@ import { SlCalender } from "react-icons/sl";
 import Footer from '../Components/Footer';
 const Contact = () => {
   return (
-    <div className='w-[100%] h-[100%] mx-auto lg:px-[15%] md:px-[10%] px-[2%] bg-[#02050a]'>
+    <div className='lg:w-[259vh] md:w-[100%] h-[100%] mx-auto lg:px-[15%] md:px-[10%] px-[2%] bg-[#02050a]'>
       <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-col-1 gap-4 pt-[100px]'>
         <div className='flex flex-col justify-center items-center p-[25px] bg-[#09101a] drop-shadow-lg rounded-[8px]'>
           <span className=' text-[#55e6a5]'><IoPhonePortraitOutline className='text-4xl' />
