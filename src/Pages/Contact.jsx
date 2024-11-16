@@ -25,7 +25,7 @@ const Contact = () => {
           <span className=' text-[#55e6a5]'><SlCalender className='text-4xl' />
           </span>
           <h4 className='text-[20px] text-white font-semibold mt-[30px] mb-[15px]'>Calender</h4>
-          <p className='text-[16px] text-[#a2a2a2] mb-[20px] font-semibold'>Loram ipsum eros justo, posuer oborti viverra laor house of street</p>
+          <p className='text-[16px] text-[#a2a2a2] mb-[20px] font-semibold'>Subscribe Newslater</p>
           <h5 className='text-[16px] text-white font-semibold cursor-pointer hover:text-[#55e6a5]'>naimekattor@gmail.com</h5>
         </div>
       </div>
