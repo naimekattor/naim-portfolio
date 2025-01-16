@@ -16,7 +16,7 @@ const Portfolio = () => {
     setShowModal(false)
   }
   return (
-    <div className='w-screen h-[100%] mx-auto lg:px-[15%] md:px-[10%] px-[2%] bg-[#02050a]'>
+    <div className='w-[100%] h-[100%] mx-auto lg:px-[15%] md:px-[10%] px-[2%] bg-[#02050a]'>
       <div className='py-8'>
         <h1 className='text-[20px] pt-[100px] text-[#55e5a6] font-semibold uppercase '>my recent Portfolio</h1>
         <h2 className='text-[52px] text-white font-RegularBold'>Elevate your brand to new heights with our

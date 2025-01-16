@@ -1,4 +1,3 @@
-import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
 import About from './Pages/About';
@@ -11,11 +10,11 @@ import Navbar from './Components/Navbar';
 
 const App = () => {
   return (
-    <div className='flex'>
+    <div className='flex w-full'>
       <div>
         <Navbar />
       </div>
-      <div className='lg:relative absolute'>
+      <div className='lg:relative absolute flex-1'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />

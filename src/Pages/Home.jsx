@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { IoMdPlay } from "react-icons/io";
 import { RxCross1 } from "react-icons/rx";
 const Home = () => {
   const [showIframe, setShowIframe] = useState(false);
   return (
-    <div className='w-[100%] h-[100%] mx-auto'>
+    <div className='w-[100%] h-[100%] mx-auto '>
       <div className='bg-intro1 bg-cover md:bg-cover h-screen w-screen bg-repeat flex items-center'>
         <div className='w-[100%] mx-[15%] '>
           <span className='text-white  md:text-[70px] text-[40px] font-RegularBold'>Hi, I'M Naim ! </span>
@@ -24,7 +24,6 @@ const Home = () => {
               {showIframe && <iframe className='md:w-[560px] md:h-[315px] w-[200px] h-[200px]' src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen name='page'>
               </iframe>}
               {showIframe && <button className=' absolute bg-white right-0 top-0 z-10 text-black p-[10px] rounded-full' onClick={() => setShowIframe(false)}><RxCross1 /></button>}
-
             </div>
 
 

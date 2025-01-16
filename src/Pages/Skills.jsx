@@ -6,7 +6,6 @@ import { NavLink } from 'react-router-dom';
 const Skills = () => {
   const [data, setData] = useState(skillsData);
   const [category, setCategory] = useState("Skills");
-
   const handleFilter = (categoryName) => {
     const dataCopy = skillsData.filter((curElem) => curElem.category === categoryName);
     setData(dataCopy);
@@ -40,7 +39,8 @@ const Skills = () => {
 
               <p className='text-[#a2a2a2] font-semibold text-[16px] mb-[25px]'>{curElem.description}</p>
 
-              <h2 className='text-white font-semibold mb-[20px] text-[16px]'>Performence</h2>
+              <h2 className='text-white font-semibold mb-[20px] text-[16px]'>Performance</h2>
+              <div className=' min-w-[200px] rounded-full bg-gray-300'><div className=' text-center w-[90%] bg-[#55e6a5]'>90%</div></div>
             </div>
           </div>
         )
