@@ -11,7 +11,7 @@ const Home = () => {
           <br />
           <span className='text-white  md:text-[70px] text-[40px] font-RegularBold '>CREATIVE </span>
           <span className='font-RegularBold md:text-[70px] text-[40px] text-[#51e5a8] mb-[65px]'>DEVELOPER</span>
-          <p className='text-[#fff] mb-[20px] md:text-[16px] text-[14px]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ullam autem <br /> aperiam provident repudiandae dignissimos ad placeat laudantium ut consectetur?</p>
+          <p className='text-[#fff] mb-[20px] md:text-[16px] text-[14px] w-1/2'> Delivering websites or web apps, cybersecurity solutions, UX/UI design, eCommerce solutions, website architectures, QA testing, maintenance, consulting, and even a custom CMS.</p>
           <div className='flex md:gap-4 gap-4 md:flex-row flex-col items-center  justify-start '>
             <button className='bg-[#51e5a8] h-[60px] md:py-1 md:px-8 py-2 px-6 border font-semibold hover:bg-[#09101a] hover:text-white'>Download Cv</button>
             <div className='flex gap-4 items-center justify-center cursor-pointer'>
