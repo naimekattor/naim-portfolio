@@ -5,7 +5,7 @@ const Home = () => {
   const [showIframe, setShowIframe] = useState(false);
   return (
     <div className='w-[100%] h-[100%] mx-auto '>
-      <div className='bg-intro1 bg-cover md:bg-cover h-screen w-screen bg-repeat flex items-center'>
+      <div className='bg-intro1 bg-cover md:bg-cover h-full w-full bg-repeat flex items-center'>
         <div className='w-[100%] mx-[15%] '>
           <span className='text-white  md:text-[70px] text-[40px] font-RegularBold'>Hi, I'M Naim ! </span>
           <br />
