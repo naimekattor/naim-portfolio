@@ -27,7 +27,7 @@ const About = () => {
   return (
     /*  About Section */
     <>
-      <div className="relative h-auto w-full flex  justify-center bg-black">
+      <div className="relative h-auto w-full flex  justify-center">
         {/* Particle Background */}
         <div className=' w-full h-auto'>
           <ParticleBackground config={particleConfig} />
@@ -46,25 +46,26 @@ const About = () => {
                 <div>
                   <img src={about_1} alt="" className='w-[90px] h-[90px]' />
                   <span className='text-[30px] text-white my-[30px] font-semibold'>My Ambition</span>
-                  <p className='text-[#A2A2A2] text-[16px] mt-[15px] text-wrap leading-8 px-12'>01. Mastering Frontend Skills: Go beyond React and solidify your knowledge in core web technologies like HTML, CSS, and JavaScript (ES6+). Aim to understand how the web works under the hood.<br />
+                  <p className=' text-[16px] mt-[15px] text-wrap leading-8 px-12 bg-white/50 drop-shadow-xl text-black rounded-lg'>
+                    <span className="text-[18px] font-semibold">01. Mastering Frontend Skills:</span> Go beyond React and solidify your knowledge in core web technologies like HTML, CSS, and JavaScript (ES6+). Aim to understand how the web works under the hood.<br />
 
-                    02. React Ecosystem: Dive deeper into React's ecosystem — Redux or other state management libraries, React Router, React Query, and testing frameworks like Jest or React Testing Library.<br />
+                    <span className="text-[18px] font-semibold">02. React Ecosystem:</span> Dive deeper into React's ecosystem — Redux or other state management libraries, React Router, React Query, and testing frameworks like Jest or React Testing Library.<br />
 
-                    03. Backend Knowledge: Learn the basics of backend development (Node.js, Express, databases) to become a more versatile full-stack developer.<br />
+                    <span className="text-[18px] font-semibold">03. Backend Knowledge:</span> Learn the basics of backend development (Node.js, Express, databases) to become a more versatile full-stack developer.<br />
 
-                    04. Performance Optimization: Develop skills in optimizing React apps for performance, focusing on things like lazy loading, reducing bundle size, and effective state management.<br />
+                    <span className="text-[18px] font-semibold">04. Performance Optimization:</span> Develop skills in optimizing React apps for performance, focusing on things like lazy loading, reducing bundle size, and effective state management.<br />
 
-                    05. Build Real Projects: Take on challenging projects that solve real-world problems or contribute to open-source projects to build a strong portfolio.<br />
+                    <span className="text-[18px] font-semibold">05. Build Real Projects:</span> Take on challenging projects that solve real-world problems or contribute to open-source projects to build a strong portfolio.<br />
 
-                    06. Stay Updated: Follow industry trends and new React features (like Server Components) to remain competitive.<br />
+                    <span className="text-[18px] font-semibold">06. Stay Updated:</span> Follow industry trends and new React features (like Server Components) to remain competitive.<br />
 
-                    07 .Career Goals: Think about specializing (e.g., UI/UX design) or aiming for leadership roles, such as becoming a tech lead or a solution architect in the long run.</p>
+                    <span className="text-[18px] font-semibold">07 .Career Goals:</span> Think about specializing (e.g., UI/UX design) or aiming for leadership roles, such as becoming a tech lead or a solution architect in the long run.</p>
                 </div>
                 <div>
                   <img src={about_2} alt="" className='w-[90px] h-[90px]' />
                   <span className='text-[30px] text-white my-[30px] font-semibold'>My Purpose</span>
 
-                  <p className='text-[#A2A2A2] text-[16px] my-[15px] leading-8 px-12'> <span className="text-[18px] font-semibold">01. Crafting User Experiences:</span> Your work directly impacts how users interact with web applications. The purpose is to create intuitive, dynamic, and responsive UIs that make users' digital interactions enjoyable and meaningful.<br />
+                  <p className=' text-[16px] my-[15px] leading-8 px-12 bg-white/50 drop-shadow-xl text-black rounded-lg'> <span className="text-[18px] font-semibold">01. Crafting User Experiences:</span> Your work directly impacts how users interact with web applications. The purpose is to create intuitive, dynamic, and responsive UIs that make users' digital interactions enjoyable and meaningful.<br />
 
                     <span className="text-[18px] font-semibold">02. Efficient Development:</span> React is known for its component-based architecture, which encourages reusability and maintainability. As a React developer, your goal is to build scalable components that can be reused, reducing redundancy and speeding up the development process.<br />
 

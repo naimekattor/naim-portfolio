@@ -26,3 +26,9 @@ canvas.canvas {
   height: 200vh !important;
   width: 100% !important;
 }
+/* media query for canvas */
+@media screen and (max-width: 480px) {
+  canvas.canvas {
+    height: 550vh !important;
+  }
+}

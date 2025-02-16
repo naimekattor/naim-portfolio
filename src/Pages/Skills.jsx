@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MdDoubleArrow } from "react-icons/md";
 import { skillsData } from '../skillsData';
 import { NavLink } from 'react-router-dom';
@@ -6,9 +6,14 @@ import { NavLink } from 'react-router-dom';
 const Skills = () => {
   const [data, setData] = useState(skillsData);
   const [category, setCategory] = useState("Skills");
+  useEffect(() => {
+    const defaultData = skillsData.filter((curElem) => curElem.category === "Skills");
+    setData(defaultData);
+  }, []);
   const handleFilter = (categoryName) => {
     const dataCopy = skillsData.filter((curElem) => curElem.category === categoryName);
     setData(dataCopy);
+    setCategory(categoryName);
 
 
   }
@@ -27,7 +32,7 @@ const Skills = () => {
         </ul>
       </div>
       <div className='grid sm:grid-cols-2 gap-4 pb-[60px]'>
-        {data.map((curElem, index) => (
+        {category && data.map((curElem, index) => (
           <div className='flex gap-2 p-[40px] border rounded mt-[30px]' key={index} >
             <span className='text-[#55E6A5] text-[20px]'><MdDoubleArrow />
             </span>
