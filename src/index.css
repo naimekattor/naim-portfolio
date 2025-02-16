@@ -22,3 +22,7 @@ a.active li,
 #cursorMagic {
   z-index: 10;
 }
+canvas.canvas {
+  height: 200vh !important;
+  width: 100% !important;
+}
