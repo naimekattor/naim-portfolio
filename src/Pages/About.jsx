@@ -46,15 +46,15 @@ const About = () => {
         </div>
         {/* Content Over Particle Background */}
         <div className="absolute ">
-          <div className='w-[100%] mx-auto  h-[100%]'>
+          <div className='w-[100%] mx-auto p-[2%]  h-[100%]'>
 
-            <div className='pt-[80px] '>
+            <div className='pt-[80px] text-center'>
               <span className='text-[#51e5a8] text-[20px]'>ABOUT ME</span>
               <h1 className='text-white text-[36px] flex-wrap font-semibold  py-[12px]'>Crafting stories through design <br /> and
                 innovation</h1>
             </div>
             <div className="max-w-5xl mx-auto">
-              <div className="relative pb-[80px]">
+              <div className="relative pb-[80px] flex flex-col justify-center items-center">
 
 
                 <div className="scroll-card flex items-center justify-between gap-4">
@@ -88,22 +88,22 @@ const About = () => {
               </div>
             </div>
             <div className='grid md:grid-cols-4 grid-cols-1 gap-4 py-[80px]'>
-              <div className='flex justify-center items-center flex-col gap-4 drop-shadow-lg bg-black text-white rounded-md  hover:border-[#55e6a5] hover:border-l-2 hover:border-t-2 p-[80px] hover:transition-all hover:duration-300  '>
+              <div className='flex justify-center items-center flex-col gap-4 drop-shadow-lg md:bg-black bg-white md:text-white text-black rounded-md  hover:border-[#55e6a5] hover:border-l-2 hover:border-t-2 p-[80px] hover:transition-all hover:duration-300  '>
                 <span className='text-2xl text-[#55e6a5]'><FaPencilRuler /></span>
                 <h1 className=' relative text-[24px] font-bold leading-[34px] mb-[9px] after:inset-0 after:absolute after:bg-[#55e6a5] after:h-1 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 hover:text-[#55e6a5] hover:transition-all hover:duration-300 cursor-pointer'>Web Design</h1>
                 <h2 className='text-[16px] font-normal leading-[26px]'>Projects 30+</h2>
               </div>
-              <div className='flex justify-center items-center flex-col gap-4 drop-shadow-lg bg-black text-white rounded-md  p-[80px] hover:border-[#55e6a5] hover:border-l-2 hover:border-t-2'>
+              <div className='flex justify-center items-center flex-col gap-4 drop-shadow-lg md:bg-black bg-white md:text-white text-black rounded-md  p-[80px] hover:border-[#55e6a5] hover:border-l-2 hover:border-t-2'>
                 <span className='text-2xl text-[#55e6a5]'><SiUbiquiti /></span>
                 <h1 className='relative text-[24px] font-bold leading-[34px] mb-[9px] after:inset-0 after:absolute after:bg-[#55e6a5] after:h-1 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 hover:text-[#55e6a5] hover:transition-all hover:duration-300 cursor-pointer'>Ui/Ux Design</h1>
                 <h2 className='text-[16px] font-normal leading-[26px]'>Projects 4+</h2>
               </div>
-              <div className='flex justify-center items-center flex-col gap-4 drop-shadow-lg bg-black text-white rounded-md  p-[80px] hover:border-[#55e6a5] hover:border-l-2 hover:border-t-2'>
+              <div className='flex justify-center items-center flex-col gap-4 drop-shadow-lg md:bg-black bg-white md:text-white text-black rounded-md  p-[80px] hover:border-[#55e6a5] hover:border-l-2 hover:border-t-2'>
                 <span className='text-2xl text-[#55e6a5]'><FaSquareWebAwesome /></span>
                 <h1 className='relative text-[24px] font-bold leading-[34px] mb-[9px] after:inset-0 after:absolute after:bg-[#55e6a5] after:h-1 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 hover:text-[#55e6a5] hover:transition-all hover:duration-300 cursor-pointer'>Web Research</h1>
                 <h2 className='text-[16px] font-normal leading-[26px]'>Projects 10+</h2>
               </div>
-              <div className='flex justify-center items-center flex-col gap-4 drop-shadow-lg bg-black text-white rounded-md  p-[80px] hover:border-[#55e6a5] hover:border-l-2 hover:border-t-2'>
+              <div className='flex justify-center items-center flex-col gap-4 drop-shadow-lg md:bg-black bg-white md:text-white text-black rounded-md  p-[80px] hover:border-[#55e6a5] hover:border-l-2 hover:border-t-2'>
                 <span className='text-2xl text-[#55e6a5]'><SiMarketo /></span>
                 <h1 className='relative text-[24px] font-bold leading-[34px] mb-[9px] after:inset-0 after:absolute after:bg-[#55e6a5] after:h-1 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 hover:text-[#55e6a5] hover:transition-all hover:duration-300 cursor-pointer'>Marketing</h1>
                 <h2 className='text-[16px] font-normal leading-[26px]'>Projects 5+</h2>
