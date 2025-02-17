@@ -10,6 +10,10 @@ import aboutCard1 from "../assets/images/aboutCard1.jpeg"
 import aboutCard2 from "../assets/images/aboutCard2.jpeg"
 import aboutCard3 from "../assets/images/aboutCard3.jpeg"
 import aboutCard4 from "../assets/images/aboutCard4.jpeg"
+import { FaPencilRuler } from "react-icons/fa";
+import { SiUbiquiti } from "react-icons/si";
+import { SiMarketo } from "react-icons/si";
+import { FaSquareWebAwesome } from "react-icons/fa6";
 const About = () => {
   const [activeAccordion, setActiveAccordion] = useState(null);
   const particleConfig = {
@@ -50,7 +54,7 @@ const About = () => {
                 innovation</h1>
             </div>
             <div className="max-w-5xl mx-auto">
-              <div className="relative pb-[120vh]">
+              <div className="relative pb-[80px]">
 
 
                 <div className="scroll-card flex items-center justify-between gap-4">
@@ -81,6 +85,28 @@ const About = () => {
                   </div>
                   <div><img src={aboutCard4} alt="card" srcSet="" /></div>
                 </div>
+              </div>
+            </div>
+            <div className='grid md:grid-cols-4 grid-cols-1 gap-4 py-[80px]'>
+              <div className='flex justify-center items-center flex-col gap-4 drop-shadow-lg bg-black text-white rounded-md  hover:border-[#55e6a5] hover:border-l-2 hover:border-t-2 p-[80px] hover:transition-all hover:duration-300  '>
+                <span className='text-2xl text-[#55e6a5]'><FaPencilRuler /></span>
+                <h1 className=' relative text-[24px] font-bold leading-[34px] mb-[9px] after:inset-0 after:absolute after:bg-[#55e6a5] after:h-1 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 hover:text-[#55e6a5] hover:transition-all hover:duration-300 cursor-pointer'>Web Design</h1>
+                <h2 className='text-[16px] font-normal leading-[26px]'>Projects 30+</h2>
+              </div>
+              <div className='flex justify-center items-center flex-col gap-4 drop-shadow-lg bg-black text-white rounded-md  p-[80px] hover:border-[#55e6a5] hover:border-l-2 hover:border-t-2'>
+                <span className='text-2xl text-[#55e6a5]'><SiUbiquiti /></span>
+                <h1 className='relative text-[24px] font-bold leading-[34px] mb-[9px] after:inset-0 after:absolute after:bg-[#55e6a5] after:h-1 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 hover:text-[#55e6a5] hover:transition-all hover:duration-300 cursor-pointer'>Ui/Ux Design</h1>
+                <h2 className='text-[16px] font-normal leading-[26px]'>Projects 4+</h2>
+              </div>
+              <div className='flex justify-center items-center flex-col gap-4 drop-shadow-lg bg-black text-white rounded-md  p-[80px] hover:border-[#55e6a5] hover:border-l-2 hover:border-t-2'>
+                <span className='text-2xl text-[#55e6a5]'><FaSquareWebAwesome /></span>
+                <h1 className='relative text-[24px] font-bold leading-[34px] mb-[9px] after:inset-0 after:absolute after:bg-[#55e6a5] after:h-1 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 hover:text-[#55e6a5] hover:transition-all hover:duration-300 cursor-pointer'>Web Research</h1>
+                <h2 className='text-[16px] font-normal leading-[26px]'>Projects 10+</h2>
+              </div>
+              <div className='flex justify-center items-center flex-col gap-4 drop-shadow-lg bg-black text-white rounded-md  p-[80px] hover:border-[#55e6a5] hover:border-l-2 hover:border-t-2'>
+                <span className='text-2xl text-[#55e6a5]'><SiMarketo /></span>
+                <h1 className='relative text-[24px] font-bold leading-[34px] mb-[9px] after:inset-0 after:absolute after:bg-[#55e6a5] after:h-1 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300 hover:text-[#55e6a5] hover:transition-all hover:duration-300 cursor-pointer'>Marketing</h1>
+                <h2 className='text-[16px] font-normal leading-[26px]'>Projects 5+</h2>
               </div>
             </div>
           </div>
