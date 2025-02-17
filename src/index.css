@@ -32,3 +32,49 @@ canvas.canvas {
     height: 550vh !important;
   }
 }
+@layer components {
+  .scroll-card {
+    position: sticky;
+    top: max(16vh, 10rem);
+    padding: 2rem 1.5rem;
+    min-height: 19rem;
+    background-color: #fff;
+    box-shadow: 0 2px 40px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 5 * 0.5rem);
+    color: #000;
+    margin-top: 10rem; /* Space between each card */
+    border-radius: 0.75rem; /* Rounded corners */
+  }
+
+  /* Create the number badge on the card */
+  @media (min-width: 768px) {
+    .scroll-card::before {
+      content: counter(card, decimal);
+      counter-increment: card;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      background-color: #55e6a5;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 50%;
+      position: absolute;
+      left: 1.25rem;
+      top: 1.25rem;
+      font-size: 1.25rem;
+    }
+
+    .scroll-card {
+      padding-left: 5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .scroll-card {
+      max-width: 42rem;
+    }
+  }
+}

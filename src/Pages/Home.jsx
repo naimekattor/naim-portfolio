@@ -38,7 +38,7 @@ const Home = () => {
 
 
           </div>
-          <div className='relative p-[30px]'>
+          <div className='relative p-[30px] inline-block'>
             {showIframe && <iframe className='md:w-[560px] md:h-[315px] w-[200px] h-[200px]' src="" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen name='page'>
             </iframe>}
             {showIframe && <button className=' absolute bg-white right-0 top-0 z-10 text-black p-[10px] rounded-full' onClick={() => setShowIframe(false)}><RxCross1 /></button>}
