@@ -34,7 +34,7 @@ const Contact = () => {
         <input className='w-[100%] h-[60px] rounded border px-4 text-white bg-[#02050a]' placeholder='Subject' type="text" name="" id="" />
         <input className='w-[100%] h-[60px] rounded border px-4 text-white bg-[#02050a]' placeholder='Email' type="email" name="" id="" />
         <textarea className='w-[100%] h-[100px] rounded border px-4 text-white bg-[#02050a]' placeholder='Your Message Here..' name="" id=""></textarea>
-        <button className='py-[18px] px-[67px] bg-[#55e6a5] mt-[20px] text-black font-semibold hover:bg-white w-60 mx-auto text-center'>Submit</button>
+        <button className='relative py-[18px] px-[67px] bg-[#55e6a5] mt-[20px] text-black font-semibold  w-60 mx-auto text-center before:absolute before:inset-0 before:bg-white/70 before:text-black before:scale-x-0 before:origin-left hover:before:scale-x-100 before:transition-transform before:duration-300 '>Submit</button>
       </form>
       <Footer />
     </div>

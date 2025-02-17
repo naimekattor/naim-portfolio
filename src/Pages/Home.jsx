@@ -23,8 +23,8 @@ const Home = () => {
             />
           </span>
 
-          <p className='text-[#fff] mb-[20px] md:text-[16px] text-[14px] w-1/2'> Delivering websites or web apps, cybersecurity solutions, UX/UI design, eCommerce solutions, website architectures, QA testing, maintenance, consulting, and even a custom CMS.</p>
-          <div className='flex md:gap-4 gap-4 md:flex-row flex-col items-center  justify-start '>
+          <p className='text-[#fff] mb-[20px] md:text-[16px] text-[14px] md:w-1/2'> Delivering websites or web apps, cybersecurity solutions, UX/UI design, eCommerce solutions, website architectures, QA testing, maintenance, consulting, and even a custom CMS.</p>
+          <div className='flex md:gap-4 gap-4 md:flex-row  items-center  justify-start '>
             <button className='relative bg-[#51e5a8] h-[60px] md:py-1 md:px-8 py-2 px-6 border font-semibold overflow-hidden before:inset-0 before:absolute before:scale-x-0 before:bg-black/50 before:origin-left before:transition-transform before:duration-300 hover:before:scale-x-100 '>Download Cv</button>
 
             <div className='flex gap-4 items-center justify-center cursor-pointer'>
@@ -33,14 +33,15 @@ const Home = () => {
               <span className='text-1xl text-white'><a onClick={() => setShowIframe(true)} href="https://www.youtube.com/embed/azCHvowfwKc?si=zcAqoh6wDzWBoIex" target='page'>Watch The Video</a> </span>
 
             </div>
-            <div className='relative p-[30px]'>
-              {showIframe && <iframe className='md:w-[560px] md:h-[315px] w-[200px] h-[200px]' src="" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen name='page'>
-              </iframe>}
-              {showIframe && <button className=' absolute bg-white right-0 top-0 z-10 text-black p-[10px] rounded-full' onClick={() => setShowIframe(false)}><RxCross1 /></button>}
-            </div>
 
 
 
+
+          </div>
+          <div className='relative p-[30px]'>
+            {showIframe && <iframe className='md:w-[560px] md:h-[315px] w-[200px] h-[200px]' src="" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen name='page'>
+            </iframe>}
+            {showIframe && <button className=' absolute bg-white right-0 top-0 z-10 text-black p-[10px] rounded-full' onClick={() => setShowIframe(false)}><RxCross1 /></button>}
           </div>
         </div>
 
