@@ -7,7 +7,7 @@ import { ParticleBackground } from 'react-interactive-particle-background';
 import { motion } from "framer-motion";
 import { FaRegHandPointRight } from "react-icons/fa";
 import aboutCard1 from "../assets/images/aboutCard1.jpeg"
-import aboutCard2 from "../assets/images/aboutCard2.jpeg"
+import aboutCard2 from "../assets/images/aboutcard2.jpeg"
 import aboutCard3 from "../assets/images/aboutCard3.jpeg"
 import aboutCard4 from "../assets/images/aboutCard4.jpeg"
 import { FaPencilRuler } from "react-icons/fa";
@@ -15,7 +15,6 @@ import { SiUbiquiti } from "react-icons/si";
 import { SiMarketo } from "react-icons/si";
 import { FaSquareWebAwesome } from "react-icons/fa6";
 const About = () => {
-  const [activeAccordion, setActiveAccordion] = useState(null);
   const particleConfig = {
     particle: {
       particleCount: 300,
