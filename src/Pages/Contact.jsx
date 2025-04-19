@@ -12,7 +12,14 @@ const Contact = () => {
           </span>
           <h4 className='text-[20px] text-white font-semibold mt-[30px] mb-[15px]'>Phone</h4>
           <p className='text-[16px] text-[#a2a2a2] mb-[20px] font-semibold'>Don't be hesitate to call me</p>
-          <h5 className='text-[16px] text-white font-semibold cursor-pointer hover:text-[#55e6a5]'>+8801518920316</h5>
+          <a
+            href="https://wa.me/8801518920316"
+            target="_blank"
+            rel="noopener noreferrer"
+            className='text-[16px] text-white font-semibold cursor-pointer hover:text-[#55e6a5]'
+          >
+            +8801518920316
+          </a>
         </div>
         <div className='flex flex-col justify-center items-center p-[25px] bg-[#09101a] drop-shadow-lg rounded-[8px]'>
           <span className=' text-[#55e6a5]'><FaMapLocation className='text-4xl' />
@@ -26,7 +33,12 @@ const Contact = () => {
           </span>
           <h4 className='text-[20px] text-white font-semibold mt-[30px] mb-[15px]'>Calender</h4>
           <p className='text-[16px] text-[#a2a2a2] mb-[20px] font-semibold'>Subscribe Newslater</p>
-          <h5 className='text-[16px] text-white font-semibold cursor-pointer hover:text-[#55e6a5]'>naimekattor@gmail.com</h5>
+          <a
+            href="mailto:naimekattor@gmail.com"
+            className='text-[16px] text-white font-semibold cursor-pointer hover:text-[#55e6a5]'
+          >
+            naimekattor@gmail.com
+          </a>
         </div>
       </div>
       <form className='grid grid-cols-1 gap-4 mt-[40px] items-center'>
