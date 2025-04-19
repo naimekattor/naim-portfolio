@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tsparticles/all": "^3.8.1",
+    "@tsparticles/react": "^3.0.0",
+    "caniuse-lite": "^1.0.30001714",
     "cursor-magic": "^0.6.1",
     "framer-motion": "^12.4.3",
     "react": "^18.3.1",

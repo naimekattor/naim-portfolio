@@ -10,22 +10,21 @@ import Navbar from './Components/Navbar';
 
 const App = () => {
   return (
-    <div className='flex w-full'>
-      <div>
-        <Navbar />
-      </div>
-      <div className='lg:relative absolute flex-1'>
+    <div className="flex w-full min-h-screen">
+      {/* Navbar */}
+      <Navbar />
+      {/* Main Content */}
+      <div className="flex-1">
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/service' element={<Service />} />
-          <Route path='/skills' element={<Skills />} />
-          <Route path='/portfolio' element={<Portfolio />} />
-          <Route path='/blog' element={<Blog />} />
-          <Route path='/contact' element={<Contact />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/service" element={<Service />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
-
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import { FaHome } from "react-icons/fa";
 import { FaBook } from "react-icons/fa6";
 import { MdDesignServices } from "react-icons/md";
@@ -17,7 +17,8 @@ const Navbar = () => {
     setNavMenu(!navMenu)
   }
   return (
-    <header className={`h-[100%] relative w-[250px] text- bg-[#09101a] flex lg:flex-col flex-row lg:static z-10 ${navMenu ? "absolute left-[-100%]" : "static "} `}>
+    <header className={` lg:static w-[250px] bg-[#09101a] flex lg:flex-col flex-row z-50 ${navMenu ? "absolute left-[-100%]" : "absolute left-0"
+      }`}>
       <div className="dropdown lg:static  min-h-screen w-auto duration-1000">
         <nav className=''>
           <div className=' mb-[40px] p-[30px] text-[#151c25]'>

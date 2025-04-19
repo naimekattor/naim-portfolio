@@ -12,6 +12,11 @@
     src: local("kingred"), url(/src/fonts/kingred.otf) format("otf");
   }
 }
+html,
+body,
+#root {
+  height: 100%;
+}
 * {
   font-family: "Poppins", serif;
 }
@@ -23,8 +28,12 @@ a.active li,
   z-index: 10;
 }
 canvas.canvas {
-  height: 200vh !important;
+  height: 100% !important;
   width: 100% !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 /* media query for canvas */
 @media screen and (max-width: 480px) {
