@@ -17,8 +17,8 @@ const Navbar = () => {
     setNavMenu(!navMenu)
   }
   return (
-    <header className={` lg:static w-[250px] bg-[#09101a] flex lg:flex-col flex-row z-50 ${navMenu ? "absolute left-[-100%]" : "absolute left-0"
-      }`}>
+    <header className={`fixed top-0 left-0 h-full w-[250px] bg-[#09101a] z-40 transform ${navMenu ? "-translate-x-full" : "translate-x-0"
+      } transition-transform duration-300 lg:translate-x-0`}>
       <div className="dropdown lg:static  min-h-screen w-auto duration-1000">
         <nav className=''>
           <div className=' mb-[40px] p-[30px] text-[#151c25]'>

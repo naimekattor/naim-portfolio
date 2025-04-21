@@ -35,6 +35,9 @@ canvas.canvas {
   left: 0;
   z-index: -1;
 }
+.item-3d-frame {
+  transform-style: preserve-3d;
+}
 /* media query for canvas */
 @media screen and (max-width: 480px) {
   canvas.canvas {
