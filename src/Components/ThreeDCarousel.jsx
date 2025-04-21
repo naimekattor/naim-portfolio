@@ -17,7 +17,7 @@ const ThreeDCarousel = ({ slides = [] }) => {
   const [touchStartTime, setTouchStartTime] = useState(null);
   const autoSlideRef = useRef(null);
 
-  useEffect(() => {
+  /* useEffect(() => {
     const resize = () => {
       const screenWidth = window.innerWidth;
       if (screenWidth < 480) {
@@ -38,7 +38,7 @@ const ThreeDCarousel = ({ slides = [] }) => {
     resize();
     window.addEventListener("resize", resize);
     return () => window.removeEventListener("resize", resize);
-  }, []);
+  }, []); */
 
   useEffect(() => {
     if (Array.isArray(slides) && slides.length > 0) {
@@ -128,7 +128,7 @@ const ThreeDCarousel = ({ slides = [] }) => {
 
   return (
     <div
-      className="relative w-full min-h-screen bg-gradient-to-br from-gray-800 to-gray-900 flex flex-col overflow-hidden"
+      className="relative w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex flex-col overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={handleTouchStart}
@@ -161,11 +161,11 @@ const ThreeDCarousel = ({ slides = [] }) => {
               key={index}
               ref={(el) => (itemsRef.current[index] = el)}
               className="mx-2 md:mx-4 relative shrink-0"
-              style={{ width: `${itemWidth}px`, height: `${itemHeight}px` }}
+
             >
               <div className="item-3d-frame relative w-full h-full transition-transform duration-1000 transform-style-preserve-3d">
                 {/* Front Face */}
-                <ThreeDCard />
+                <ThreeDCard slide={slide} />
 
                 {/* Left and Right Sides */}
                 <div className="absolute top-0 left-0 w-3 md:w-5 h-full bg-gray-800 border-l-4 border-white transform -translate-x-1 rotate-y-[-90deg] origin-left"></div>
