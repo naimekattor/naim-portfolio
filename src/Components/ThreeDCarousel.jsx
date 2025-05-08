@@ -8,7 +8,6 @@ const ThreeDCarousel = ({ slides = [] }) => {
   const itemsRef = useRef([]);
   const [currIndex, setCurrIndex] = useState(0);
   const [itemWidth, setItemWidth] = useState(300);
-  const [itemHeight, setItemHeight] = useState(400);
   const currIndexRef = useRef(0);
   const [isHovered, setIsHovered] = useState(false);
   const intervalTime = 4000;
@@ -17,28 +16,7 @@ const ThreeDCarousel = ({ slides = [] }) => {
   const [touchStartTime, setTouchStartTime] = useState(null);
   const autoSlideRef = useRef(null);
 
-  /* useEffect(() => {
-    const resize = () => {
-      const screenWidth = window.innerWidth;
-      if (screenWidth < 480) {
-        setItemWidth(Math.max(screenWidth * 0.9, 200));
-        setItemHeight(window.innerHeight * 0.3);
-      } else if (screenWidth < 640) {
-        setItemWidth(Math.max(screenWidth * 0.8, 250));
-        setItemHeight(window.innerHeight * 0.4);
-      } else if (screenWidth < 1024) {
-        setItemWidth(Math.max(screenWidth * 0.5, 300));
-        setItemHeight(window.innerHeight * 0.5);
-      } else {
-        setItemWidth(Math.max(screenWidth * 0.25, 350));
-        setItemHeight(window.innerHeight * 0.6);
-      }
-    };
 
-    resize();
-    window.addEventListener("resize", resize);
-    return () => window.removeEventListener("resize", resize);
-  }, []); */
 
   useEffect(() => {
     if (Array.isArray(slides) && slides.length > 0) {
@@ -46,8 +24,8 @@ const ThreeDCarousel = ({ slides = [] }) => {
     }
     startAutoSlide();
     return () => stopAutoSlide();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [itemWidth]);
+
+  }, []);
 
   const startAutoSlide = () => {
     stopAutoSlide();
@@ -76,7 +54,7 @@ const ThreeDCarousel = ({ slides = [] }) => {
 
       if (i === index - 1) {
         item.classList.add("active");
-        box.style.transform = "perspective(1200px)";
+        box.style.transform = "perspective(200px)";
       } else {
         item.classList.remove("active");
         box.style.transform = `perspective(1200px) rotateY(${i < index - 1 ? 40 : -40}deg)`;
