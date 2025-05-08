@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <>
       {/* Hamburger for small screens */}
-      <div className='lg:hidden fixed top-4 left-4 z-50 text-5xl text-[#09101a] bg-[#51e5a8] p-2 rounded cursor-pointer'>
+      <div className='lg:hidden fixed top-4 left-4 z-50 text-3xl text-[#09101a] bg-[#51e5a8] p-2 rounded cursor-pointer'>
         {navMenu ? <RxCross1 onClick={handleNavBar} /> : <FaBars onClick={handleNavBar} />}
       </div>
 
