@@ -3,41 +3,41 @@ import { gallerydata } from '../skillsData';
 import Modal from '../Components/Modal';
 import ThreeDCarousel from '../Components/ThreeDCarousel';
 import Carousel3D from '../Components/Carousel3D';
-import project2 from "../assets/images/progressbar-02KUBb8P.png";
-import project3 from "../assets/images/quizzapp--crAInoF.png";
+import project2 from "../assets/images/Refabry.png";
+import project3 from "../assets/images/learnup.png";
 import project4 from "../assets/images/gadget-shop.jpeg";
-import project1 from "../assets/images/handson1.png";
+import project1 from "../assets/images/responsive.png";
 const Portfolio = () => {
 
 
   const customSlides = [
     {
-      title: "Modern Portfolio Website",
-      tech: ["React", "Tailwind CSS", "Framer Motion"],
-      description: "A clean, animated portfolio website showcasing projects, skills, and contact info.",
-      liveLink: "https://your-portfolio-live-link.com",
+      title: "Modern Gardening With GreenWorld",
+      tech: ["React", "Tailwind CSS", "Framer Motion", "Node JS", "Express Js", "MongoDB"],
+      description: "A gardeners community website, where gardeners share tips and create a community",
+      liveLink: "https://gardening-34dc8.web.app/",
       liveIcon: "🔗",
-      codeLink: "https://github.com/yourusername/portfolio",
+      codeLink: "https://github.com/naimekattor",
       codeIcon: "💻",
       imageUrl: project1
     },
     {
-      title: "E-commerce Electronics Store",
-      tech: ["Next.js", "Redux Toolkit", "Stripe API"],
-      description: "An online electronics shop with product filtering, search, and secure checkout system.",
-      liveLink: "https://your-electronics-store.com",
+      title: "Refabry E-commerce Store",
+      tech: ["React.js", "Redux Toolkit", "Tailwind css"],
+      description: "An online E-commerce shop with product filtering, search, and secure checkout system.",
+      liveLink: "https://refabry.vercel.app",
       liveIcon: "🔗",
-      codeLink: "https://github.com/yourusername/ecommerce-store",
+      codeLink: "https://github.com/naimekattor",
       codeIcon: "📦",
       imageUrl: project2
     },
     {
-      title: "AI Blog Generator",
-      tech: ["Next.js", "OpenAI API", "Tailwind CSS"],
-      description: "A blog platform where users can generate full articles using AI with SEO optimization.",
-      liveLink: "https://your-ai-blog-app.com",
+      title: "Language Learning platform",
+      tech: ["React.js", "React Router", "Tailwind CSS", "Firebase", "Node Js", "Express Js", "JWT", "MongoDB"],
+      description: "A Language Learning platform where users can find theire native language tutor,booked tutor,add tutor",
+      liveLink: "https://friendly-beignet-ea5754.netlify.app",
       liveIcon: "🔗",
-      codeLink: "https://github.com/yourusername/ai-blog-generator",
+      codeLink: "https://github.com/naimekattor/",
       codeIcon: "🧠",
       imageUrl: project3
     },

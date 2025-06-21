@@ -22,7 +22,7 @@ body,
 }
 a.active li,
 .active {
-  color: #55e6a5;
+  color: #f58c0f;
 }
 #cursorMagic {
   z-index: 10;

@@ -23,11 +23,11 @@ const Navbar = () => {
   return (
     <>
       {/* Hamburger for small screens */}
-      <div className='lg:hidden fixed top-4 left-4 z-50 text-3xl text-[#09101a] bg-[#51e5a8] p-2 rounded cursor-pointer'>
+      <div className='lg:hidden fixed top-4 left-4 z-50 text-3xl text-[#ffffff] bg-[#f58c0f] p-2 rounded cursor-pointer'>
         {navMenu ? <RxCross1 onClick={handleNavBar} /> : <FaBars onClick={handleNavBar} />}
       </div>
 
-      <aside className={`fixed lg:static top-0 left-0 min-h-screen w-[250px] bg-[#09101a] z-40 transform transition-transform duration-300 
+      <aside className={`fixed lg:static top-0 left-0 min-h-screen w-[250px] md:bg-[#fdf2ba] bg-[#ffffff] z-40 transform transition-transform duration-300 
         ${navMenu ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}>
 
         <div className='min-h-screen flex flex-col p-4'>
@@ -45,8 +45,8 @@ const Navbar = () => {
               { icon: <MdContactMail />, label: 'Contact', path: '/contact' },
             ].map(({ icon, label, path }) => (
               <NavLink to={path} key={path} onClick={() => setNavMenu(false)}>
-                <li className='flex items-center gap-4 border group cursor-pointer p-2 rounded text-[#a2a2a2] hover:text-[#51e5a8]'>
-                  <span className='text-white bg-[#222831] p-3 rounded group-hover:bg-[#51e5a8] group-hover:text-black'>
+                <li className='flex items-center gap-4 border border-[#f58c0f] group cursor-pointer p-2 rounded text-[#000000] hover:text-[#f58c0f]'>
+                  <span className='text-white bg-[#222831] p-3 rounded group-hover:bg-[#f58c0f] group-hover:text-black'>
                     {icon}
                   </span>
                   <span className="uppercase">{label}</span>
