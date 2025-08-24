@@ -90,3 +90,160 @@ canvas.canvas {
     }
   }
 }
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+/* Optimize animations and reduce cursor lag */
+.animate-on-scroll,
+.skill-item,
+.project-card,
+.scroll-card {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimize GSAP animations */
+.gsap-marker-start,
+.gsap-marker-end,
+.gsap-marker-scroller-start,
+.gsap-marker-scroller-end {
+  display: none !important;
+}
+
+/* Reduce layout thrashing */
+.sidebar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-scrollable {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Optimize hover effects */
+.hover-optimized {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, box-shadow;
+}
+
+/* Reduce paint operations */
+.reduced-paint {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Custom scrollbar for better performance */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Mobile responsiveness improvements */
+@media (max-width: 768px) {
+  .sidebar-fixed {
+    width: 100%;
+    z-index: 50;
+  }
+  
+  .main-scrollable {
+    margin-left: 0 !important;
+  }
+}
+
+/* Carousel improvements */
+.carousel-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.item-3d-frame {
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+/* Skills page improvements */
+.skill-item {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 640px) {
+  .skill-item {
+    padding: 20px;
+    min-height: auto;
+  }
+  
+  .skill-item h1 {
+    font-size: 14px;
+  }
+  
+  .skill-item h2 {
+    font-size: 18px;
+  }
+  
+  .skill-item p {
+    font-size: 14px;
+  }
+}
+
+/* Portfolio improvements */
+.project-card {
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Line clamp for text overflow */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Fix for GSAP ScrollTrigger on mobile */
+@media (max-width: 768px) {
+  .gsap-scroll-trigger {
+    transform: none !important;
+  }
+}
