@@ -4,7 +4,7 @@ This is a personal portfolio website built using React and Vite. The website sho
 
 ## Overview
 
-The portfolio website is designed to provide a comprehensive view of my professional journey. It includes sections for an introduction, project showcases, skills, experience, and contact information. The website is hosted on Vercel and can be accessed at [naim-portfolio-delta.vercel.app](https://naim-portfolio-delta.vercel.app).
+The portfolio website is designed to provide a comprehensive view of my professional journey. It includes sections for an introduction, project showcases, skills, experience, and contact information. The website is hosted on Vercel and can be accessed at [https://naimworld.netlify.app](https://naimworld.netlify.app).
 
 ## Features
 
@@ -15,7 +15,7 @@ The portfolio website is designed to provide a comprehensive view of my professi
 
 ## Live Demo
 
-Check out the live demo of the portfolio website: [naim-portfolio-delta.vercel.app](https://naim-portfolio-delta.vercel.app)
+Check out the live demo of the portfolio website: [naim-portfolio-delta.vercel.app](https://naimworld.netlify.app)](https://naimworld.netlify.app]()
 
 ## Installation
 
