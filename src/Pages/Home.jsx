@@ -1,181 +1,202 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from "react";
 import { IoMdPlay } from "react-icons/io";
-import { RxCross1 } from "react-icons/rx";
-import Typewriter from 'typewriter-effect';
-import banner3 from '../assets/images/banner3.png'
-import { 
-  fadeIn, 
-  slideInLeft, 
-  slideInRight, 
-  slideInBottom, 
-  scaleIn, 
-  floatingAnimation,
-  scrollAnimation,
-  staggerAnimation
-} from '../utils/gsapAnimations';
-
+import { FaArrowRight } from "react-icons/fa";
+import { AiOutlineDown } from "react-icons/ai";
+import Typewriter from "typewriter-effect";
+import { Link } from "react-router-dom";
+import naim from "../assets/images/banner3.png";
 const Home = () => {
-  const [showIframe, setShowIframe] = useState(false);
-  
-  // Refs for animations
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
   const profileImageRef = useRef(null);
   const socialSectionRef = useRef(null);
-  const bannerTopRef = useRef(null);
-  const bannerBottomRef = useRef(null);
-  const typewriterRef = useRef(null);
-  const descriptionRef = useRef(null);
-  const portfolioButtonRef = useRef(null);
+  const contentRef = useRef(null);
 
+  // Parallax and scroll effects
   useEffect(() => {
-    // Profile image animation
-    if (profileImageRef.current) {
-      scaleIn(profileImageRef.current, 1.2, 0.3);
-      floatingAnimation(profileImageRef.current, 15, 3);
-    }
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setIsScrolled(scrollY > 50);
 
-    // Social section animation
-    if (socialSectionRef.current) {
-      slideInRight(socialSectionRef.current, 1, 0.5);
-    }
+      if (profileImageRef.current) {
+        profileImageRef.current.style.transform = `translateY(${
+          scrollY * 0.3
+        }px)`;
+      }
+    };
 
-    // Banner top section
-    if (bannerTopRef.current) {
-      const elements = bannerTopRef.current.children;
-      staggerAnimation(Array.from(elements), 'fadeIn', 0.3);
-    }
-
-    // Banner bottom section
-    if (bannerBottomRef.current) {
-      const elements = bannerBottomRef.current.children;
-      staggerAnimation(Array.from(elements), 'slideInBottom', 0.4);
-    }
-
-    // Typewriter text animation
-    if (typewriterRef.current) {
-      slideInBottom(typewriterRef.current, 1, 1);
-    }
-
-    // Description text animation
-    if (descriptionRef.current) {
-      slideInBottom(descriptionRef.current, 1, 1.5);
-    }
-
-    // Portfolio button animation
-    if (portfolioButtonRef.current) {
-      scaleIn(portfolioButtonRef.current, 1, 2);
-    }
-
-    // Scroll-triggered animations
-    const elements = document.querySelectorAll('.animate-on-scroll');
-    elements.forEach((element, index) => {
-      scrollAnimation(element, 'fadeIn', 'top 80%');
-    });
-
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Mouse tracking for subtle hover effect
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  const socialLinks = [
+    { label: "Facebook", url: "https://www.facebook.com/" },
+    { label: "Twitter", url: "https://x.com/" },
+    { label: "Instagram", url: "https://www.instagram.com/" },
+    { label: "LinkedIn", url: "https://www.linkedin.com/" },
+  ];
+
   return (
-    <div className="bg-cover min-h-screen bg-origin-content bg-repeat bg-intro1">
-      <div className="w-11/12 mx-auto flex items-center py-16">
-        <div className="grid md:grid-cols-12 grid-cols-1 w-full">
-          {/* Left Side: Image and Socials */}
-          <div className="md:col-span-4 col-span-12 flex md:items-end items-start">
-            <div className="relative z-10 pb-5 w-full flex flex-col md:items-center items-start mt-[10px] md:mt-0">
-              <img
-                ref={profileImageRef}
-                decoding="async"
-                src={banner3}
-                alt="Xorim"
-                className="border-none rounded-none shadow-none h-auto max-w-full mt-20 cursor-pointer"
-              />
-              <div 
-                ref={socialSectionRef}
-                className="md:absolute -right-[48%] bottom-0 bg-[#ffb646] rounded-[10px] py-[120px] -z-10 min-w-[380px] flex justify-end px-6 mt-4 md:mt-0"
-              >
-                <ul className="
-                  relative
-                  list-none 
-                  after:content-['']
-                  after:absolute
-                  after:left-0 after:bottom-0
-                  after:border-b-2 after:border-r-2 after:border-[#ffffff]
-                  after:rounded-br-[10px]
-                  after:pointer-events-none
-                  after:z-0
-                ">
-                  <li className="animate-on-scroll"><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">Facebook</a></li>
-                  <li className="animate-on-scroll"><a href="https://x.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">X</a></li>
-                  <li className="animate-on-scroll"><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">Instagram</a></li>
-                  <li className="animate-on-scroll"><a href="https://www.dribbble.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300">Dribbble</a></li>
-                </ul>
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-950 to-black text-white overflow-hidden">
+      {/* Background Elements */}
+      <div className="fixed inset-0 -z-10 opacity-30">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gray-800 rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gray-700 rounded-full blur-3xl opacity-20"></div>
+      </div>
+
+      {/* Main Container */}
+      <div className="relative z-10">
+        {/* Navigation Spacer */}
+        <div className="h-20"></div>
+
+        {/* Hero Section */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[calc(100vh-120px)]">
+            {/* Left Section - Image */}
+            <div className="flex items-center justify-center lg:justify-start order-2 lg:order-1">
+              <div className="relative w-full max-w-md">
+                {/* Image Background Glow */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-gray-600 to-gray-800 rounded-2xl blur-lg opacity-30"></div>
+
+                {/* Profile Image */}
+                <div
+                  ref={profileImageRef}
+                  className="relative overflow-hidden rounded-2xl border border-gray-700 bg-gray-900 p-1"
+                >
+                  <div className="aspect-square bg-gradient-to-br from-gray-800 to-black rounded-xl flex items-center justify-center">
+                    {/* <div className="text-center">
+                      <div className="text-6xl font-bold text-gray-700 mb-4">
+                        NK
+                      </div>
+                      <p className="text-gray-500">Portfolio Image</p>
+                    </div> */}
+                    <img src={naim} alt="naim" srcset="" />
+                  </div>
+                </div>
+
+                {/* Social Links Box */}
+                <div
+                  ref={socialSectionRef}
+                  className="absolute -bottom-6 -right-6 bg-white text-black rounded-2xl shadow-2xl p-6 w-fit backdrop-blur-lg border border-gray-200"
+                >
+                  <div className="space-y-3">
+                    {socialLinks.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-sm font-semibold hover:text-gray-600 transition-colors duration-300 group"
+                      >
+                        <span className="group-hover:translate-x-1 inline-block transition-transform">
+                          {link.label}
+                        </span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Section - Content */}
+            <div
+              ref={contentRef}
+              className="order-1 lg:order-2 text-center lg:text-left"
+            >
+              {/* Subtitle */}
+              <div className="mb-6 inline-block lg:inline-block">
+                <span className="text-sm sm:text-base font-semibold text-gray-400 uppercase tracking-widest">
+                  Welcome to my portfolio
+                </span>
+              </div>
+
+              {/* Main Headline */}
+              <div className="mb-8">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-2 leading-tight">
+                  Hi, I'm{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
+                    Naim
+                  </span>
+                </h1>
+
+                {/* Typewriter Effect */}
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-300 h-20 lg:h-24 flex items-center">
+                  <Typewriter
+                    options={{
+                      strings: [
+                        "Web Developer",
+                        "UI/UX Designer",
+                        "Creative Coder",
+                        "Problem Solver",
+                      ],
+                      autoStart: true,
+                      loop: true,
+                      delay: 100,
+                      deleteSpeed: 80,
+                    }}
+                  />
+                </div>
+              </div>
+
+              {/* Description */}
+              <p className="text-base sm:text-lg text-gray-400 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                Crafting beautiful, intuitive digital experiences with 5+ years
+                of expertise. I specialize in building contemporary web
+                applications with meticulous attention to detail and
+                user-centric design.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+                <Link
+                  to="/portfolio"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 group"
+                >
+                  View My Work
+                  <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-gray-600 text-white font-semibold rounded-lg hover:border-gray-400 hover:bg-gray-900 transition-all duration-300"
+                >
+                  <IoMdPlay className="text-sm" />
+                  Get In Touch
+                </Link>
+              </div>
+
+              {/* Stats/Features */}
+              <div className="grid grid-cols-3 gap-4 pt-8 border-t border-gray-800">
+                <div className="text-center lg:text-left">
+                  <p className="text-2xl sm:text-3xl font-bold">50+</p>
+                  <p className="text-xs sm:text-sm text-gray-500">Projects</p>
+                </div>
+                <div className="text-center lg:text-left">
+                  <p className="text-2xl sm:text-3xl font-bold">30+</p>
+                  <p className="text-xs sm:text-sm text-gray-500">Clients</p>
+                </div>
+                <div className="text-center lg:text-left">
+                  <p className="text-2xl sm:text-3xl font-bold">5+</p>
+                  <p className="text-xs sm:text-sm text-gray-500">Years Exp</p>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Right Side: Banner Content */}
-          <div className="md:col-span-8 col-span-12 flex items-center md:pl-[80px]">
-            <div className="w-full px-6">
-              {/* Banner Top */}
-              <div 
-                ref={bannerTopRef}
-                className="flex md:flex-row flex-col gap-[60px] mb-[70px] relative z-10 text-center"
-              >
-                <div className="mb-6 md:mb-0 animate-on-scroll">
-                  <p className='text-[#666666] text-[18px] leading-relaxed'>
-                    My aim is to build contemporary homes whose beauty perishes in the delicate touches of minutiae lines and shapes. Within our plan, we endowed Villa with interestingly high-contrast spatial experiences. I've spent most of my waking hours.
-                  </p>
-                </div>
-                <div className="animate-on-scroll">
-                  <a 
-                    ref={portfolioButtonRef}
-                    href="https://wp.validthemes.net/xorim/projects/" 
-                    className="
-                      inline-flex items-center justify-end uppercase relative z-10 text-[20px] text-right min-w-[160px] text-[#000000]
-                      after:content-['']
-                      after:absolute after:left-0 after:top-1/2 after:w-[100px] after:h-[100px]
-                      after:-translate-y-1/2 after:bg-[#ffb646] after:rounded-full after:-z-10
-                      hover:scale-105 transition-transform duration-300
-                    "
-                  >
-                    <div className="relative text-[16px] text-black font-semibold z-10 flex items-center">
-                      <span className='relative'>
-                        <img
-                          decoding="async"
-                          src="https://wp.validthemes.net/xorim/wp-content/uploads/2025/03/1-1.png"
-                          alt="Xorim"
-                          className="h-[12px] mr-[15px]"
-                        />
-                      </span>
-                      My Portfolio
-                    </div>
-                  </a>
-                </div>
-              </div>
-
-              {/* Banner Bottom */}
-              <div ref={bannerBottomRef} className='relative z-10 md:pl-[50px] pl-0'>
-                <h2 className="text-2xl md:text-[70px] text-center font-bold md:mb-4 mb-1 animate-on-scroll">HI, I'M Naim</h2>
-                <h1 
-                  ref={typewriterRef}
-                  className="text-3xl md:text-[70px] ml-[70px] font-semibold md:mt-12 mt-4 mb-4 animate-on-scroll"
-                >
-                  <Typewriter
-                    options={{
-                      strings: ['Web Developer', 'Professional Coder', 'UI/UX Designer'],
-                      autoStart: true,
-                      loop: true,
-                      delay: 150,
-                      deleteSpeed: 110,
-                    }}
-                  />
-                </h1>
-                <p 
-                  ref={descriptionRef}
-                  className='md:float-right float-none md:max-w-[70%] w-full bg-[#ffffff66] p-[40px] rounded-[10px] mt-6 text-[#666666] text-[18px] font-normal animate-on-scroll leading-relaxed'
-                >
-                  Creative and detail-oriented Web Developer with 25+ years of experience in developing intuitive, user-centric interfaces.
-                </p>
-              </div>
-            </div>
+          {/* Scroll Indicator */}
+          <div className="flex justify-center items-center py-12 text-gray-500 animate-bounce">
+            <AiOutlineDown className="text-2xl" />
           </div>
         </div>
       </div>

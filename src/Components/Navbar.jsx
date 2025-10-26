@@ -1,102 +1,251 @@
-import { useState, useEffect, useRef } from 'react';
-import { FaBars } from "react-icons/fa6";
+import { useState, useEffect, useRef } from "react";
+import { FaBars, FaHome, FaBook } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
-import { NavLink } from 'react-router-dom';
-import {
-  FaHome, FaBook
-} from "react-icons/fa";
-import {
-  MdDesignServices, MdContactMail
-} from "react-icons/md";
+import { MdDesignServices, MdContactMail } from "react-icons/md";
 import { GiSkills } from "react-icons/gi";
 import { ImBlogger2 } from "react-icons/im";
 import { FiShoppingBag } from "react-icons/fi";
-import N from '../assets/images/logo3.png';
-import { fadeIn, slideInLeft, hoverScale } from '../utils/gsapAnimations';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [navMenu, setNavMenu] = useState(false);
-  const logoRef = useRef(null);
-  const navItemsRef = useRef([]);
-  const hamburgerRef = useRef(null);
+  const [activeLink, setActiveLink] = useState("/");
+  const [scrolled, setScrolled] = useState(false);
 
-  const handleNavBar = () => {
+  const navItems = [
+    { icon: <FaHome />, label: "Home", path: "/" },
+    { icon: <FaBook />, label: "About", path: "/about" },
+    { icon: <MdDesignServices />, label: "Services", path: "/service" },
+    { icon: <GiSkills />, label: "Skills", path: "/skills" },
+    { icon: <FiShoppingBag />, label: "Portfolio", path: "/portfolio" },
+    { icon: <ImBlogger2 />, label: "Blog", path: "/blog" },
+    { icon: <MdContactMail />, label: "Contact", path: "/contact" },
+  ];
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (navMenu && !e.target.closest("nav")) {
+        setNavMenu(false);
+      }
+    };
+
+    if (navMenu) {
+      document.addEventListener("click", handleClickOutside);
+      return () => document.removeEventListener("click", handleClickOutside);
+    }
+  }, [navMenu]);
+
+  const handleNavClick = (path) => {
+    setActiveLink(path);
+    setNavMenu(false);
+    window.scrollTo(0, 0);
+  };
+
+  const toggleMenu = (e) => {
+    e.stopPropagation();
     setNavMenu(!navMenu);
   };
 
-  useEffect(() => {
-    // Logo animation
-    if (logoRef.current) {
-      fadeIn(logoRef.current, 1, 0.2);
-    }
-
-    // Nav items stagger animation
-    if (navItemsRef.current.length > 0) {
-      navItemsRef.current.forEach((item, index) => {
-        slideInLeft(item, 0.8, index * 0.1);
-        hoverScale(item, 1.05);
-      });
-    }
-
-    // Hamburger button animation
-    if (hamburgerRef.current) {
-      fadeIn(hamburgerRef.current, 0.8, 0.5);
-    }
-  }, []);
-
-  const addToRefs = (el) => {
-    if (el && !navItemsRef.current.includes(el)) {
-      navItemsRef.current.push(el);
-    }
-  };
+  const isActive = (path) => activeLink === path;
 
   return (
     <>
-      {/* Hamburger for small screens */}
-      <div 
-        ref={hamburgerRef}
-        className='lg:hidden fixed top-4 left-4 z-50 text-3xl text-[#ffffff] bg-[#f58c0f] p-2 rounded cursor-pointer hover:bg-[#e67e0e] transition-colors duration-300'
+      <nav
+        className={`fixed w-full z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-white shadow-lg border-b border-gray-200"
+            : "bg-black border-b border-gray-800"
+        }`}
       >
-        {navMenu ? <RxCross1 onClick={handleNavBar} /> : <FaBars onClick={handleNavBar} />}
-      </div>
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 sm:h-20">
+            {/* Logo */}
+            <div className="flex-shrink-0 min-w-fit">
+              <Link
+                to={"/"}
+                className={`text-xl sm:text-2xl md:text-3xl font-bold transition-colors duration-300 ${
+                  scrolled ? "text-black" : "text-white"
+                }`}
+              >
+                <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+                  Naim
+                </span>
+                <span className={scrolled ? "text-black" : "text-white"}>
+                  .dev
+                </span>
+              </Link>
+            </div>
 
-      <aside className={`lg:block w-[250px] h-screen md:bg-[#fdf2ba] bg-[#ffffff] z-40 transform transition-transform duration-300 
-        ${navMenu ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}>
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center flex-1 justify-center mx-8">
+              <ul className="flex items-center gap-1">
+                {navItems.map(({ icon, label, path }) => (
+                  <li key={path}>
+                    <Link
+                      to={path}
+                      onClick={() => handleNavClick(path)}
+                      className={`flex items-center gap-2 px-3 xl:px-4 py-2 rounded-lg transition-all duration-300 font-medium text-sm ${
+                        isActive(path)
+                          ? scrolled
+                            ? "bg-black text-white shadow-md"
+                            : "bg-white text-black shadow-md"
+                          : scrolled
+                          ? "text-gray-700 hover:bg-gray-100"
+                          : "text-gray-300 hover:bg-gray-900 hover:text-white"
+                      }`}
+                    >
+                      <span className="text-base lg:text-lg">{icon}</span>
+                      <span className="hidden xl:inline text-xs lg:text-sm">
+                        {label}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-        <div className='h-screen flex flex-col p-4'>
-          <div className='mb-10 px-4'>
-            <img 
-              ref={logoRef}
-              src={N} 
-              alt="Logo" 
-              className="w-full cursor-pointer" 
-            />
+            {/* Mobile Menu Button */}
+            <button
+              onClick={toggleMenu}
+              className={`lg:hidden p-2 rounded-lg transition-all duration-300 hover:scale-110 ${
+                scrolled
+                  ? "text-black hover:bg-gray-200"
+                  : "text-white hover:bg-gray-900"
+              }`}
+            >
+              {navMenu ? (
+                <RxCross1 className="text-2xl sm:text-3xl" />
+              ) : (
+                <FaBars className="text-2xl sm:text-3xl" />
+              )}
+            </button>
           </div>
-          <ul className='flex flex-col gap-4 px-4'>
-            {[
-              { icon: <FaHome />, label: 'Home', path: '/' },
-              { icon: <FaBook />, label: 'About Me', path: '/about' },
-              { icon: <MdDesignServices />, label: 'Service', path: '/service' },
-              { icon: <GiSkills />, label: 'Skills', path: '/skills' },
-              { icon: <FiShoppingBag />, label: 'Portfolio', path: '/portfolio' },
-              { icon: <ImBlogger2 />, label: 'Blog', path: '/blog' },
-              { icon: <MdContactMail />, label: 'Contact', path: '/contact' },
-            ].map(({ icon, label, path }, index) => (
-              <NavLink to={path} key={path} onClick={() => setNavMenu(false)}>
-                <li 
-                  ref={addToRefs}
-                  className='flex items-center gap-4 border border-[#f58c0f] group cursor-pointer p-2 rounded text-[#000000] hover:text-[#f58c0f] transition-all duration-300 hover:shadow-lg hover:border-[#e67e0e]'
-                >
-                  <span className='text-white bg-[#222831] p-3 rounded group-hover:bg-[#f58c0f] group-hover:text-black transition-all duration-300'>
-                    {icon}
-                  </span>
-                  <span className="uppercase font-medium">{label}</span>
-                </li>
-              </NavLink>
-            ))}
-          </ul>
         </div>
-      </aside>
+      </nav>
+
+      {/* Spacer */}
+      <div className="h-16 sm:h-20"></div>
+
+      {/* Mobile Menu Overlay - Full Screen Slide from Top Left */}
+      {navMenu && (
+        <div
+          className="fixed inset-0 z-40 lg:hidden"
+          onClick={() => setNavMenu(false)}
+        >
+          {/* Background Overlay */}
+          <div
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={() => setNavMenu(false)}
+          ></div>
+
+          {/* Slide Menu from Top Left */}
+          <div
+            className={`absolute top-0 left-0 h-screen w-full sm:w-96 bg-gradient-to-br from-gray-900 to-black shadow-2xl border-r border-gray-800 transform transition-transform duration-300 ease-out ${
+              navMenu ? "translate-x-0" : "-translate-x-full"
+            }`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Menu Header */}
+            <div className="flex items-center justify-between h-16 sm:h-20 px-4 sm:px-6 border-b border-gray-800">
+              <div className="text-2xl sm:text-3xl font-bold">
+                <span className="bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent">
+                  Menu
+                </span>
+              </div>
+              <button
+                onClick={() => setNavMenu(false)}
+                className="p-2 text-white hover:bg-gray-800 rounded-lg transition-all"
+              >
+                <RxCross1 className="text-2xl" />
+              </button>
+            </div>
+
+            {/* Menu Items */}
+            <div className="overflow-y-auto h-[calc(100vh-80px)] px-4 sm:px-6 py-6">
+              <ul className="space-y-2">
+                {navItems.map(({ icon, label, path }, index) => (
+                  <li
+                    key={path}
+                    className={`transform transition-all duration-300 ${
+                      navMenu
+                        ? "translate-x-0 opacity-100"
+                        : "-translate-x-10 opacity-0"
+                    }`}
+                    style={{
+                      transitionDelay: navMenu ? `${index * 50}ms` : "0ms",
+                    }}
+                  >
+                    <Link
+                      to={path}
+                      onClick={() => handleNavClick(path)}
+                      className={`w-full flex items-center gap-4 px-6 py-4 rounded-lg transition-all duration-300 font-semibold text-base group ${
+                        isActive(path)
+                          ? "bg-white text-black shadow-lg"
+                          : "text-gray-300 hover:bg-gray-800 hover:text-white"
+                      }`}
+                    >
+                      <span
+                        className={`text-2xl transition-transform duration-300 ${
+                          isActive(path) ? "scale-110" : "group-hover:scale-110"
+                        }`}
+                      >
+                        {icon}
+                      </span>
+                      <span>{label}</span>
+                      {isActive(path) && (
+                        <span className="ml-auto w-2 h-2 rounded-full bg-white"></span>
+                      )}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Social Links at Bottom */}
+              <div className="mt-12 pt-6 border-t border-gray-800">
+                <p className="text-gray-500 text-sm font-semibold mb-4 px-2">
+                  CONNECT
+                </p>
+                <div className="flex gap-3">
+                  <a
+                    href="https://github.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all duration-300 text-white hover:scale-110"
+                  >
+                    GH
+                  </a>
+                  <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all duration-300 text-white hover:scale-110"
+                  >
+                    LI
+                  </a>
+                  <a
+                    href="https://twitter.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-all duration-300 text-white hover:scale-110"
+                  >
+                    TW
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
